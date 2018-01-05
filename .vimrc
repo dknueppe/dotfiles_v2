@@ -71,6 +71,18 @@ autocmd Filetype tex,latex inoremap <buffer> ä {\"a}
 autocmd Filetype tex,latex inoremap <buffer> Ä {\"A}
 autocmd Filetype tex,latex inoremap <buffer> ö {\"o}
 autocmd Filetype tex,latex inoremap <buffer> Ö {\"O}
+autocmd Filetype tex,latex inoremap <buffer> <leader>f <ESC>?<SPACE><CR>:noh<CR>a\frac{<ESC>A}{}<ESC>i
+autocmd Filetype tex,latex inoremap <buffer> => \Rightarrow
+autocmd Filetype tex,latex inoremap <buffer> -> \rightarrow
+autocmd Filetype tex,latex inoremap <buffer> <leader>a \alpha
+autocmd Filetype tex,latex inoremap <buffer> <leader>el \epsilon
+autocmd Filetype tex,latex inoremap <buffer> <leader>e \varepsilon
+autocmd Filetype tex,latex inoremap <buffer> <leader>d \delta
+autocmd Filetype tex,latex inoremap <buffer> <leader>b \beta
+autocmd Filetype tex,latex inoremap <buffer> <leader>O \Omega
+autocmd Filetype tex,latex inoremap <buffer> <leader>o \omega
+autocmd Filetype tex,latex inoremap <buffer> <leader>u \mu
+autocmd Filetype tex,latex inoremap <buffer> <SPACE><SPACE> <ESC>%%a
 
 autocmd Filetype vhdl imap <buffer> <leader>e <ESC>bientity<SPACE><ESC>ea<SPACE>is
 autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>ea<SPACE>of<ESC>?entity<CR>wyw/architecturex<CR>3elpAis<ESC>?x<CR>xo
