@@ -1,10 +1,10 @@
 keycode  29 = z Z z Z less yen leftarrow
-keycode  30 = u U u U bracketleft uparrow downarrow
-keycode  31 = i I i I bracketright idotless rightarrow
+keycode  30 = u U u U parenleft uparrow downarrow
+keycode  31 = i I i I parenright idotless rightarrow
 keycode  32 = o O o O greater Oslash oslash
 keycode  43 = h H h H braceleft Hstroke hstroke
-keycode  44 = j J j J parenleft dead_abovedot dead_belowdot
-keycode  45 = k K k K parenright ampersand kra
+keycode  44 = j J j J bracketleft dead_abovedot dead_belowdot
+keycode  45 = k K k K bracketright ampersand kra
 keycode  46 = l L l L braceright Lstroke lstroke
 
 clear Lock 
