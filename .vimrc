@@ -26,7 +26,7 @@ Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 Plugin 'c.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -73,4 +73,4 @@ autocmd Filetype tex,latex inoremap <buffer> ö {\"o}
 autocmd Filetype tex,latex inoremap <buffer> Ö {\"O}
 
 autocmd Filetype vhdl imap <buffer> <leader>e <ESC>bientity<SPACE><ESC>ea<SPACE>is
-autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>ea<SPACE>of<ESC>?entity<CR>wyw/architecturex<CR>3elpAis<ESC>?x<CR>xo
+autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>Aof<SPACE><ESC>?entity<CR>wyw/architecturex<CR>$p0exAis<CR>
