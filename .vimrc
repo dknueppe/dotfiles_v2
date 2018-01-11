@@ -58,19 +58,27 @@ noremap <F7> :set expandtab!<CR>
 
 nmap <C-n> :noh<CR>
 
-imap <leader>' ''<ESC>i
-imap <leader>" ""<ESC>i
-imap <leader>[ []<ESC>i
 imap <leader>{ {<CR>}<ESC>O
-imap <leader>( ()<ESC>i
 imap <leader>cmain <ESC>:-1read/home/daniel/.vim/templates/main.c<CR>/;<CR>ji<Tab>
 
-autocmd Filetype tex,latex inoremap <buffer> ü {\"u}
-autocmd Filetype tex,latex inoremap <buffer> Ü {\"U}
-autocmd Filetype tex,latex inoremap <buffer> ä {\"a}
-autocmd Filetype tex,latex inoremap <buffer> Ä {\"A}
-autocmd Filetype tex,latex inoremap <buffer> ö {\"o}
-autocmd Filetype tex,latex inoremap <buffer> Ö {\"O}
+function! LatexGermanUmlaut()
+	inoremap <buffer> ü {\"u}
+        inoremap <buffer> Ü {\"U}
+        inoremap <buffer> ä {\"a}
+        inoremap <buffer> Ä {\"A}
+        inoremap <buffer> ö {\"o}
+        inoremap <buffer> Ö {\"O}
+endfunction
+	
+autocmd Filetype tex,latex call LatexGermanUmlaut()
+
+
+"autocmd Filetype tex,latex inoremap <buffer> ü {\"u}
+"autocmd Filetype tex,latex inoremap <buffer> Ü {\"U}
+"autocmd Filetype tex,latex inoremap <buffer> ä {\"a}
+"autocmd Filetype tex,latex inoremap <buffer> Ä {\"A}
+"autocmd Filetype tex,latex inoremap <buffer> ö {\"o}
+"autocmd Filetype tex,latex inoremap <buffer> Ö {\"O}
 autocmd Filetype tex,latex inoremap <buffer> <leader>f <ESC>?<SPACE><CR>:noh<CR>a\frac{<ESC>A}{}<ESC>i
 autocmd Filetype tex,latex inoremap <buffer> => \Rightarrow
 autocmd Filetype tex,latex inoremap <buffer> -> \rightarrow
@@ -83,6 +91,7 @@ autocmd Filetype tex,latex inoremap <buffer> <leader>O \Omega
 autocmd Filetype tex,latex inoremap <buffer> <leader>o \omega
 autocmd Filetype tex,latex inoremap <buffer> <leader>u \mu
 autocmd Filetype tex,latex inoremap <buffer> <SPACE><SPACE> <ESC>%%a
+autocmd Filetype tex,latex inoremap <buffer> <leader>beg \begin{document}<CR><CR><CR>\end{document}<ESC>kO
 
 autocmd Filetype vhdl imap <buffer> <leader>e <ESC>bientity<SPACE><ESC>ea<SPACE>is
 autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>Aof<SPACE><ESC>?entity<CR>wyw/architecturex<CR>$p0exAis<CR>
