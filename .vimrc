@@ -11,87 +11,76 @@ set path+=**
 set wildmenu
 set t_Co=256
 set t_ut=
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
 
-
-"====================PLUGINS=====================
+"====================PLUGINS=====================   
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'valloric/youcompleteme'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
-"let g:airline_powerline_fonts = 1
-Plugin 'c.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 call vundle#end()
 filetype plugin on
 filetype indent on
-"====================MAPPINGS====================
-" Convinience
+
 nmap G Gzz
 nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
 
-" Arrow Keys
 nmap <up> ddkkp
 nmap <down> ddp
 nmap <left> :tabprevious<CR>
 nmap <right> :tabnext<CR>
 
+inoremap <SPACE><SPACE> <ESC>%%a
 
 noremap <F7> :set expandtab!<CR>
 
 nmap <C-n> :noh<CR>
 
 imap <leader>{ {<CR>}<ESC>O
-imap <leader>cmain <ESC>:-1read/home/daniel/.vim/templates/main.c<CR>/;<CR>ji<Tab>
 
 function! LatexGermanUmlaut()
 	inoremap <buffer> ü {\"u}
-        inoremap <buffer> Ü {\"U}
-        inoremap <buffer> ä {\"a}
-        inoremap <buffer> Ä {\"A}
-        inoremap <buffer> ö {\"o}
-        inoremap <buffer> Ö {\"O}
+	inoremap <buffer> Ü {\"U}
+	inoremap <buffer> ä {\"a}
+	inoremap <buffer> Ä {\"A}
+	inoremap <buffer> ö {\"o}
+	inoremap <buffer> Ö {\"O}
 endfunction
-	
-autocmd Filetype tex,latex call LatexGermanUmlaut()
 
+function! LatexMaths()
+	inoremap <buffer> <leader>f <ESC>?<SPACE><CR>:noh<CR>a\frac{<ESC>A}{}<ESC>i
+	inoremap <buffer> => \Rightarrow
+	inoremap <buffer> -> \rightarrow
+endfunction
 
-"autocmd Filetype tex,latex inoremap <buffer> ü {\"u}
-"autocmd Filetype tex,latex inoremap <buffer> Ü {\"U}
-"autocmd Filetype tex,latex inoremap <buffer> ä {\"a}
-"autocmd Filetype tex,latex inoremap <buffer> Ä {\"A}
-"autocmd Filetype tex,latex inoremap <buffer> ö {\"o}
-"autocmd Filetype tex,latex inoremap <buffer> Ö {\"O}
-autocmd Filetype tex,latex inoremap <buffer> <leader>f <ESC>?<SPACE><CR>:noh<CR>a\frac{<ESC>A}{}<ESC>i
-autocmd Filetype tex,latex inoremap <buffer> => \Rightarrow
-autocmd Filetype tex,latex inoremap <buffer> -> \rightarrow
-autocmd Filetype tex,latex inoremap <buffer> <leader>a \alpha
-autocmd Filetype tex,latex inoremap <buffer> <leader>el \epsilon
-autocmd Filetype tex,latex inoremap <buffer> <leader>e \varepsilon
-autocmd Filetype tex,latex inoremap <buffer> <leader>d \delta
-autocmd Filetype tex,latex inoremap <buffer> <leader>b \beta
-autocmd Filetype tex,latex inoremap <buffer> <leader>O \Omega
-autocmd Filetype tex,latex inoremap <buffer> <leader>o \omega
-autocmd Filetype tex,latex inoremap <buffer> <leader>u \mu
-autocmd Filetype tex,latex inoremap <buffer> <SPACE><SPACE> <ESC>%%a
-autocmd Filetype tex,latex inoremap <buffer> <leader>beg \begin{document}<CR><CR><CR>\end{document}<ESC>kO
+function! LatexGreekLetters()
+
+	inoremap <buffer> <leader>a \alpha
+	inoremap <buffer> <leader>el \epsilon
+	inoremap <buffer> <leader>e \varepsilon
+	inoremap <buffer> <leader>d \delta
+	inoremap <buffer> <leader>b \beta
+	inoremap <buffer> <leader>O \Omega
+	inoremap <buffer> <leader>o \omega
+	inoremap <buffer> <leader>u \mu
+endfunction
+
+function! VhdlArchitecture()
+	let line = getline(".")
+	let blub = setline("?") "hier nochmal in der :help weiter lesen.
+endfunction
+
+autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>Aof<SPACE><ESC>?entity<CR>wyw/architecturex<CR>$p0exAis<CR>
+
+function! SetupLatex()
+	call LatexGermanUmlaut()
+	call LatexMaths()
+	call LatexGreekLetters()
+	inoremap <buffer> <leader>beg \begin{document}<CR><CR><CR>\end{document}<ESC>kO
+endfunction
+
+autocmd Filetype tex,latex call SetupLatex()
 
 autocmd Filetype vhdl imap <buffer> <leader>e <ESC>bientity<SPACE><ESC>ea<SPACE>is
-autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>Aof<SPACE><ESC>?entity<CR>wyw/architecturex<CR>$p0exAis<CR>
