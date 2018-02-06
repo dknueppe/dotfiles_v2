@@ -14,6 +14,23 @@ set t_ut=
 
 "====================PLUGINS=====================   
 set rtp+=~/.vim/bundle/Vundle.vim
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+"Plugin 'valloric/youcompleteme'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bling/vim-airline'
+"let g:airline_powerline_fonts = 1
+Plugin 'c.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
