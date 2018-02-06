@@ -14,8 +14,6 @@ set t_ut=
 
 "====================PLUGINS=====================   
 set rtp+=~/.vim/bundle/Vundle.vim
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
