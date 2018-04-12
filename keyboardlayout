@@ -11,6 +11,3 @@ clear Lock
 keysym Caps_Lock = Escape
 keysym Escape = Caps_Lock
 add Lock = Caps_Lock
-
-remove mod1 = Alt_L
-keysym Alt_L = ISO_Level3_Shift

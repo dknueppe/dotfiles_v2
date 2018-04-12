@@ -2,12 +2,12 @@
 #                                       MY I3WM CUSTOM CONFIG FILE                                      #                    
 #########################################################################################################
  
-## I3-GAPS {{{
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0 
-gaps inner 15
-gaps outer 15
-#}}}
+### I3-GAPS {{{
+#hide_edge_borders both
+#for_window [class="^.*"] border pixel 0 
+#gaps inner 15
+#gaps outer 15
+##}}}
 
 ## KEYBINDING {{{
 # default Modifier to Super key. Alternatively, still enable Alt for floating window dragging and resizing
@@ -210,13 +210,15 @@ workspace $ws10 output $monright
 
 ## AUTOSTART APPLICATIONS {{{
 # daemons and applets
-exec --no-startup-id $HOME/.screenlayout/dual-horizontal.sh
-exec --no-startup-id $HOME/.fehbg
-exec --no-startup-id compton
-exec --no-startup-id xfce4-terminal -T Terminal 
-exec --no-startup-id xfce4-terminal -T Editor
-exec --no-startup-id thunderbird
-exec --no-startup-id spotify
+exec --no-startup-id $HOME/.screenlayout/dual-horizontal.sh &
+exec --no-startup-id $HOME/.fehbg &
+exec --no-startup-id compton &
+exec --no-startup-id xfce4-terminal -T Terminal &
+exec --no-startup-id xfce4-terminal -T Editor &
+exec --no-startup-id thunderbird &
+exec --no-startup-id spotify &
+exec --no-startup-id nm-applet &
+exec --no-startup-id "polybar status" &
 
 
 # }}}
