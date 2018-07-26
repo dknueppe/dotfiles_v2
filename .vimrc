@@ -17,15 +17,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 Plugin 'c.vim'
 Plugin 'cognoscan/vim-vhdl'
-"Plugin 'suoto/vim-hdl'
+Plugin 'suoto/vim-hdl'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -33,7 +33,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_vhdl_checkers = ['vimhdl']
+let g:syntastic_vhdl_checkers = ['vimhdl']
 
 call vundle#end()
 filetype plugin on
@@ -93,7 +93,7 @@ endfunction
 autocmd Filetype vhdl imap <buffer> <leader>a <ESC>biarchitecturex<SPACE><ESC>Aof<SPACE><ESC>?entity<CR>wyw/architecturex<CR>$p0exAis<CR>
 
 function! SetupLatex()
-	call LatexGermanUmlaut()
+"	call LatexGermanUmlaut()
 	call LatexMaths()
 	call LatexGreekLetters()
 	inoremap <buffer> <leader>beg \begin{document}<CR><CR><CR>\end{document}<ESC>kO
